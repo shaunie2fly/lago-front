@@ -11,6 +11,9 @@ import { inputGlobalStyles } from '~/styles/globalStyle'
 import { ErrorBoundary } from '~/components/ErrorBoundary'
 import { RouteWrapper } from '~/components/RouteWrapper'
 
+// eslint-disable-next-line no-console
+console.info(APP_ENV)
+
 const App = () => {
   const [client, setClient] = useState<ApolloClient<NormalizedCacheObject> | null>(null)
 
