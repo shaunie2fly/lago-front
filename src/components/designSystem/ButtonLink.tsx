@@ -8,8 +8,13 @@ import { ConditionalWrapper } from '~/components/ConditionalWrapper'
 import { Icon, IconName } from './Icon'
 import { Typography } from './Typography'
 
+enum ButtonLinkTypeEnum {
+  tab = 'tab',
+  button = 'button',
+}
 export interface ButtonLinkProps {
   to: string
+  type?: keyof typeof ButtonLinkTypeEnum
   title?: string | number
   icon?: IconName
   active?: boolean
@@ -19,7 +24,19 @@ export interface ButtonLinkProps {
 }
 
 export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
-  ({ to, title, icon, active, disabled, external, onClick }: ButtonLinkProps, ref) => {
+  (
+    {
+      to,
+      title,
+      icon,
+      active,
+      disabled,
+      external,
+      type = ButtonLinkTypeEnum.tab,
+      onClick,
+    }: ButtonLinkProps,
+    ref
+  ) => {
     const onMouseDown = (e: MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault()
       onClick && onClick(e)
