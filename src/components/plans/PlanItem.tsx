@@ -182,6 +182,7 @@ const SmallCell = styled(Typography)`
 
 const ButtonMock = styled.div`
   width: 40px;
+  min-width: 40px;
 `
 
 PlanItem.displayName = 'PlanItem'

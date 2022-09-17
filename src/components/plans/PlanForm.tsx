@@ -448,6 +448,7 @@ export const PlanForm = ({ loading, plan, children, onSave, isEdition }: PlanFor
                     fullWidth
                     size="large"
                     onClick={formikProps.submitForm}
+                    data-test="submit"
                   >
                     {translate(
                       isEdition ? 'text_625fd165963a7b00c8f598aa' : 'text_62ff5d01a306e274d4ffcc75'
